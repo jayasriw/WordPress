@@ -1,0 +1,72 @@
+<?php
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
+}
+
+global $wpdb;
+
+$id = get_the_ID();
+if (!empty($company_id)) {
+    $id = $company_id;
+}
+$company_meta_data = get_post_custom($id);
+$company_location = get_the_terms($company_id, 'company-location');
+$company_categories =  get_the_terms($company_id, 'company-categories');
+$company_size =  get_the_terms($company_id,  'company-size');
+$company_logo   = get_post_meta($company_id, JOBPORTAL_METABOX_PREFIX . 'company_logo');
+$enable_company_review = jobportal_get_option('enable_single_company_review','1');
+$company_item_class[] = 'jobportal-company-item';
+if (!empty($layout)) {
+    $company_item_class[] = $layout;
+}
+$company_item_class[] = 'company-' . $id;
+$meta_query = jobportal_posts_company($id);
+?>
+<div class="<?php echo join(' ', $company_item_class); ?>">
+    <div class="company-top">
+        <a class="company-img" href="<?php echo get_the_permalink($company_id); ?>">
+            <?php if (!empty($company_logo[0]['url'])) : ?>
+                <img class="logo-company" src="<?php echo $company_logo[0]['url'] ?>" alt="" />
+            <?php else : ?>
+                <div class="logo-company"><i class="far fa-camera"></i></div>
+            <?php endif; ?>
+        </a>
+        <?php if (!empty(get_the_title($company_id))) : ?>
+            <h2 class="company-title">
+                <a href="<?php echo get_the_permalink($company_id); ?>"><?php echo get_the_title($company_id); ?></a>
+            </h2>
+            <?php jobportal_company_green_tick($company_id); ?>
+        <?php endif; ?>
+        <div class="company-inner">
+            <?php if (is_array($company_location)) { ?>
+                <div class="company-location">
+                    <?php foreach ($company_location as $location) {
+                        $location_link = get_term_link($location, 'company-size'); ?>
+                        <a href="<?php echo esc_url($location_link); ?>" class="cate jobportal-link-bottom">
+                            <i class="fas fa-map-marker-alt"></i><?php esc_html_e($location->name); ?>
+                        </a>
+                    <?php } ?>
+                </div>
+            <?php } ?>
+            <?php if ($enable_company_review) { ?>
+                <?php echo jobportal_get_total_rating('company', $company_id); ?>
+            <?php } ?>
+        </div>
+    </div>
+    <?php if (!empty(get_the_content($company_id))) : ?>
+        <div class="des-company">
+            <?php echo wp_trim_words(get_the_content($company_id), 8); ?>
+        </div>
+    <?php endif; ?>
+    <?php if ($meta_query->post_count > 0) : ?>
+        <div class="company-available">
+            <span><?php echo $meta_query->post_count; ?></span> <?php esc_html_e('jobs available', 'jobportal-framework') ?>
+        </div>
+    <?php endif; ?>
+    <?php if(!empty($company_id)){?>
+        <a class="jobportal-button button-outline-accent button-icon-right" href="<?php echo esc_url(get_post_type_archive_link('jobs')) . '/?company_id=' . $company_id ?>">
+            <span><?php esc_html_e('View jobs', 'jobportal-framework') ?></span><i class="fas fa-external-link-alt"></i>
+        </a>
+    <?php } ?>
+    <a class="jobportal-link-item" href="<?php echo get_post_permalink($company_id) ?>"></a>
+</div>

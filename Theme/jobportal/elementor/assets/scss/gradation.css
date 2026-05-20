@@ -1,0 +1,96 @@
+.jobportal-gradation .count {
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@keyframes gradationSignal {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+.jobportal-gradation .count-wrap {
+  position: relative;
+  width: 46px;
+  height: 46px;
+}
+.jobportal-gradation .count-wrap:before, .jobportal-gradation .count-wrap:after {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: -25px;
+  opacity: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  pointer-events: none;
+  border: 1px solid var(--jobportal-color-accent);
+  transform-origin: 50% 50%;
+  animation-timing-function: cubic-bezier(0, 0.55, 0.55, 1);
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+.jobportal-gradation .count-wrap:after {
+  animation-delay: 0.75s;
+}
+.jobportal-gradation .content-wrap {
+  margin-left: 60px;
+}
+.jobportal-gradation .count {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 48px;
+  border-radius: 50%;
+  text-align: center;
+  transform: translate(0, -50%);
+  z-index: 3;
+  background: #f2f8f7;
+  border: 1px solid #f2f8f7;
+  color: var(--jobportal-color-accent);
+  font-size: 24px;
+  font-weight: 600;
+}
+.jobportal-gradation .item {
+  display: -ms-flexbox;
+  display: flex;
+}
+.jobportal-gradation .item:last-child .line:before {
+  display: none;
+}
+.jobportal-gradation .item:hover .count {
+  border-color: transparent;
+}
+.jobportal-gradation .item:hover .count-wrap:before, .jobportal-gradation .item:hover .count-wrap:after {
+  animation-name: gradationSignal;
+}
+.jobportal-gradation .item + .item {
+  margin-top: 38px;
+}
+.jobportal-gradation .line:before {
+  content: "";
+  position: absolute;
+  top: 70px;
+  left: 23px;
+  border-left: 2px solid #ffd75e;
+  width: 2px;
+  height: 60px;
+  display: inline-block;
+}
+.jobportal-gradation .title {
+  font-size: 24px;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.jobportal-gradation .title mark {
+  color: var(--jobportal-color-accent);
+  background-color: transparent;
+}
+
+/*# sourceMappingURL=gradation.css.map */

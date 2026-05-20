@@ -1,0 +1,15 @@
+.elementor-widget-jobportal-candidates.jobportal-align-bottom {
+  text-align: center;
+}
+.elementor-widget-jobportal-candidates.jobportal-align-bottom .jobportal-button {
+  margin-top: 20px;
+}
+.elementor-widget-jobportal-candidates.jobportal-align-bottom .candidate-bottom,
+.elementor-widget-jobportal-candidates.jobportal-align-bottom .candidate-header,
+.elementor-widget-jobportal-candidates.jobportal-align-bottom .candidates-title,
+.elementor-widget-jobportal-candidates.jobportal-align-bottom .candidate-inner {
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=candidates.css.map */

@@ -1,0 +1,97 @@
+.jobportal-mailchimp-form p {
+  margin-bottom: 0;
+}
+.jobportal-mailchimp-form .mc4wp-alert.mc4wp-error {
+  margin-top: 10px;
+}
+.jobportal-mailchimp-form .mc4wp-form-fields {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.jobportal-mailchimp-form label {
+  font-size: 0;
+}
+.jobportal-mailchimp-form input[type=email] {
+  border-radius: 30px;
+  border-color: #eee;
+  background-color: transparent;
+  color: var(--jobportal-color-secondary);
+  width: 370px;
+}
+
+.jobportal-mailchimp-form-style-01 label {
+  margin-right: 12px;
+}
+.jobportal-mailchimp-form-style-01 input[type=submit] {
+  margin-bottom: 0;
+  padding: 12px 36px;
+  border-radius: 50px;
+  border: 1px solid var(--jobportal-color-accent);
+  background-color: var(--jobportal-color-accent);
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+.jobportal-mailchimp-form-style-01 input[type=submit]:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0 0);
+  color: #fff;
+}
+
+.jobportal-mailchimp-form-style-02 .mc4wp-form-fields {
+  position: relative;
+}
+.jobportal-mailchimp-form-style-02 .mc4wp-form-fields p:last-child {
+  position: absolute;
+  top: 12px;
+  bottom: 0;
+  left: 325px;
+  width: 20px;
+  height: 20px;
+}
+.jobportal-mailchimp-form-style-02 .mc4wp-form-fields p:last-child:before {
+  content: "\f1d8";
+  font-family: "Font Awesome 5 Pro";
+  display: block;
+  color: var(--jobportal-color-accent);
+  font-size: 20px;
+}
+.jobportal-mailchimp-form-style-02 input[type=submit] {
+  font-size: 0;
+  background-color: transparent;
+  border: 0;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  top: -27px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 1199px) {
+  .jobportal-mailchimp-form input[type=email] {
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .jobportal-mailchimp-form label {
+    width: 100%;
+  }
+  .jobportal-mailchimp-form .mc4wp-form-fields {
+    display: block;
+  }
+  .jobportal-mailchimp-form-style-01 label {
+    margin-right: 0;
+  }
+  .jobportal-mailchimp-form-style-01 input[type=submit] {
+    width: 100%;
+    margin-top: 15px;
+  }
+  .jobportal-mailchimp-form-style-02 .mc4wp-form-fields p:last-child {
+    left: auto;
+    right: 22px;
+  }
+}
+
+/*# sourceMappingURL=mailchimp-form.css.map */
