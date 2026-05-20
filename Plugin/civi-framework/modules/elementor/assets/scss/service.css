@@ -1,0 +1,45 @@
+.service-tabs .service-nav {
+  margin: 0 0 40px 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+.service-tabs .service-nav a {
+  font-weight: 500;
+  font-size: 16px;
+  padding: 9px 24px;
+  border: 1px solid #DDDDDD;
+  border-radius: 50px;
+  background-color: #fff;
+  display: block;
+}
+.service-tabs .service-nav li + li {
+  margin-left: 24px;
+}
+.service-tabs .service-nav a.active {
+  background: var(--civi-color-accent);
+  border-color: var(--civi-color-accent);
+  color: #fff;
+}
+.service-tabs .service-nav.underline a {
+  padding: 0 0 3px 0;
+  background-color: transparent;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+}
+.service-tabs .service-nav.underline a.active {
+  background-color: transparent;
+  border-color: var(--civi-color-accent);
+  color: var(--civi-color-accent);
+}
+.service-tabs .service-tab-content {
+  display: none;
+}
+.service-tabs .service-tab-content.active {
+  display: block;
+}
+/*# sourceMappingURL=service.css.map */

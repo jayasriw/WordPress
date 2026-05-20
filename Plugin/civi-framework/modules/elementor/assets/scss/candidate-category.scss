@@ -1,0 +1,68 @@
+@import "mixins";
+@import "variables";
+
+.elementor-widget-civi-candidate-category {
+	.cate-inner {
+		background-color: #fff;
+		padding: 28px;
+		border: 1px solid $border-color;
+		border-radius: 16px;
+		position: relative;
+	}
+	.cate-content {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-top: 24px;
+	}
+	.cate-title {
+		font-weight: 500;
+		font-size: 18px;
+		margin: 0 20px 0 0;
+	}
+	.icon-arrow {
+		i {
+			color: $secondary_color;
+		}
+	}
+	.icon-cate {
+		position: relative;
+		display: inline-block;
+		&:before {
+			content: '';
+			width: 36px;
+			height: 36px;
+			background: rgba(255, 215, 94, 0.2);
+			display: block;
+			position: absolute;
+			top: -15px;
+			right: -15px;
+			z-index: 1;
+			border-radius: 50%;
+		}
+		i {
+			font-size: 20px;
+			position: relative;
+			z-index: 2;
+			color: $accent_color;
+		}
+	}
+	.elementor-grid-candidate.layout-02 {
+		.cate-inner {
+			text-align: center;
+		}
+		.icon-cate {
+			&:before {
+				content: '';
+				display: none;
+			}
+		}
+		.cate-content {
+			justify-content: center;
+		}
+		.cate-title {
+			margin: 0;
+		}
+	}
+}

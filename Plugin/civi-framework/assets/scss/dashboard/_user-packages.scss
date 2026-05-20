@@ -1,0 +1,139 @@
+.packages-dashboard {
+  .limit,
+  .days,
+  .remaining {
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  .package-id {
+    color: $accent_color;
+  }
+}
+
+#form-candidate-user-package,
+#form-employer-user-package {
+  .inner-popup {
+    padding: 0;
+    max-width: 370px;
+  }
+  h5 {
+    padding: 24px;
+  }
+  .btn-close {
+    top: 30px;
+    right: 24px;
+  }
+  i.fa-check {
+    color: #3ab446;
+  }
+}
+
+.civi-overview-package {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 0;
+  li {
+    @include d-flex();
+    @include justify-content-between();
+    padding: 12px 24px;
+    font-weight: 500;
+    &:nth-child(odd) {
+      background-color: rgba(0, 116, 86, 0.05);
+    }
+  }
+  .content {
+    color: $primary_color;
+  }
+}
+
+@media (min-width: 1200px) {
+  .packages-dashboard {
+    .col-name {
+      min-width: 300px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .packages-dashboard tbody td:first-child {
+    min-width: 120px !important;
+  }
+}
+
+// Purchase History Payment Column
+.purchase-history {
+  .payment-method-label {
+    display: block;
+  }
+
+  .payment-date-label {
+    display: block;
+    color: #999;
+    font-size: 0.85em;
+    margin-top: 4px;
+  }
+}
+
+// Loading effect for new package button
+.civi-new-package {
+  position: relative;
+
+  .civi-loading-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: inherit;
+  }
+
+  .civi-loading-effect:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: inherit;
+  }
+
+  .civi-dual-ring {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    z-index: 11;
+  }
+
+  .civi-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid $accent_color;
+    border-color: $accent_color transparent $accent_color transparent;
+    animation: civi-dual-ring 1.2s linear infinite;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+@keyframes civi-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

@@ -1,0 +1,45 @@
+.elementor-widget-civi-candidate-box .candidate-item-inner {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.elementor-widget-civi-candidate-box .candidate-avatar {
+  height: 54px;
+  width: 54px;
+  object-fit: cover;
+  background-color: #f9f9f9;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 54px;
+  max-width: none;
+  display: inline-block;
+  border: 2px solid var(--civi-color-border);
+  margin-right: 15px;
+}
+.elementor-widget-civi-candidate-box .candidates-title {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+.elementor-widget-civi-candidate-box .candidates-title span {
+  bottom: 3px;
+}
+.elementor-widget-civi-candidate-box .candidate-current-position {
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFD75E;
+}
+.elementor-widget-civi-candidate-box i.fa-check {
+  font-size: 8px;
+  width: 15px;
+  height: 15px;
+  background-color: #3ab446;
+  line-height: 15px;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  margin-left: 0;
+  margin-right: 5px;
+}
+
+/*# sourceMappingURL=candidate-box.css.map */
