@@ -1,0 +1,194 @@
+.civi-service-dashboard,
+.my-candidate-package{
+  .entry-title{
+    @include d-flex();
+    @include align-items-center();
+    @include justify-content-between();
+  }
+}
+
+.civi-service-order{
+  .status{
+    .tooltip[data-title]{
+      cursor: help;
+      &:before {
+        left: 50%;
+        @include transform(translateX(-50%));
+      }
+    }
+  }
+  .start-time span{
+    display: block;
+    font-size: 14px;
+    color: red;
+  }
+}
+
+#form-service-order-refund,
+#form-service-withdraw{
+  .inner-popup{
+    max-width: 550px;
+  }
+  p{
+    margin-top: 12px;
+    margin-bottom: 0;
+    a{
+      color: $accent_color;
+      font-weight: 500;
+    }
+  }
+  .btn-wrapper{
+    text-align: right;
+    padding-top: 20px;
+  }
+}
+
+#form-service-view-reason{
+  .content-refund-reason{
+    margin-top: 12px;
+  }
+}
+
+#my-service,
+.civi-service-order,
+#employer-wishlist,
+.civi-package-wrap.package-service{
+  .cate + .cate{
+    &:before{
+      content: ', ';
+    }
+  }
+  .content{
+    max-width: 370px;
+  }
+  .title-my-service{
+    .featured{
+      top: -3px;
+    }
+    img{
+      width: 18px;
+    }
+  }
+  .price{
+    font-weight: 500;
+    color: $primary_color;
+  }
+  .service-header{
+    @include d-flex();
+    @include align-items-center();
+  }
+  .thumbnail{
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 12px;
+  }
+  .start-time{
+    min-width: 150px;
+  }
+}
+
+#civi_payment_service{
+  &:hover{
+    background-color: var(--civi-color-accent);
+    color: #fff;
+  }
+  .civi-loading-effect{
+    position: relative;
+    &:before{
+      content: none;
+    }
+  }
+  .civi-dual-ring{
+    width: 18px;
+    height: 18px;
+    position: relative;
+    @include transform(none);
+    &:after{
+      width: 18px;
+      height: 18px;
+      border-width: 2px;
+      border-style: solid;
+      border-color: #fff transparent #fff transparent;
+    }
+  }
+}
+
+.civi-service-withdraw{
+  .total-action{
+    margin-bottom: 20px;
+    .entry-number{
+      font-size: 28px;
+    }
+  }
+}
+
+.civi-package-wrap.package-service{
+  p{
+    @include d-flex();
+    @include justify-content-between();
+    margin-bottom: 12px;
+  }
+  .civi-package-item{
+    padding: 24px;
+  }
+  .package-header{
+    @include d-flex();
+    margin-bottom: 20px;
+  }
+  .title-my-service a{
+    @include d-flex();
+    font-size: 16px;
+    font-weight: 500;
+    color: $primary_color;
+    margin-bottom: 3px;
+  }
+  .package-content{
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid $border-color;
+  }
+  .package-bottom{
+    .total{
+      font-weight: 600;
+      color: $primary_color;
+    }
+    .price{
+      font-weight: bold;
+    }
+    .delivery-time{
+      font-weight: 500;
+    }
+  }
+  .civi-button{
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .civi-service-order{
+    .table-dashboard{
+      tbody td{
+        &:first-child {
+          min-width: auto;
+        }
+        &:nth-child(2){
+          min-width: 350px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .my-service,
+  .my-candidate-package{
+    .entry-title{
+     display: block;
+    }
+    .civi-button{
+      margin-bottom: 20px;
+    }
+  }
+}

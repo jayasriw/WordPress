@@ -1,0 +1,117 @@
+.service-head-details{
+  h1{
+    font-size: 28px;
+  }
+  .featured.tooltip[data-title] {
+    &:before{
+      top: -0.2em;
+    }
+  }
+  .head-left{
+    .info{
+      @include d-flex();
+      @include justify-content-between();
+    }
+    .info-inner{
+      @include d-flex();
+      @include align-items-center();
+    }
+    .info-right{
+      @include d-flex();
+    }
+    .image-candidates{
+      width: 32px;
+      height: 32px;
+      object-fit: cover;
+      border-radius: 50%;
+      background-color: #fff;
+      line-height: 32px;
+      text-align: center;
+      font-size: 14px;
+    }
+    h4{
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+    .candidate-current-position{
+      font-weight: 500;
+      color: $accent_color;
+    }
+    .candidate-wrapper {
+      @include d-flex();
+      @include flex-wrap();
+      @include align-items-center();
+      margin-left: 12px;
+      &:before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        top: 50%;
+        background-color: #d9d9d9;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+    }
+    .civi-rating-wrapper{
+      margin-left: 8px;
+    }
+    .image-candidates{
+      margin-right: 10px;
+    }
+  }
+  .btn-share,
+  .btn-add-to-wishlist{
+    @include d-flex();
+    @include justify-content-center();
+    @include align-items-center();
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 116, 86, 0.05);
+    border-radius: 50%;
+    color: $accent_color;
+  }
+  .btn-add-to-wishlist{
+    margin-left: 16px;
+    i{
+      position: relative;
+      margin-top: 5px;
+    }
+  }
+  .toggle-social .social-share{
+    z-index: 9;
+  }
+}
+
+.service-gallery-details{
+  .slick-arrow{
+    &.gl-prev {
+      left: 30px;
+    }
+    &.gl-next {
+      right: 30px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .service-head-details{
+    h1{
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    .head-left{
+      .info{
+        display: block;
+      }
+      .info-right{
+        margin-top: 15px;
+      }
+    }
+    .civi-rating-wrapper{
+      margin-top: 0;
+      .review-count{
+        display: none;
+      }
+    }
+  }
+}

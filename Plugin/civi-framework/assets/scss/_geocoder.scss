@@ -1,0 +1,101 @@
+/* Geocoder Styles */
+.geocoder {
+    position: relative;
+    z-index: 1000;
+}
+
+.mapboxgl-ctrl-geocoder {
+    display: none !important;
+}
+
+#search-location {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e1e5e9;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+
+    &::placeholder {
+        color: #6c757d;
+        opacity: 0.7;
+    }
+}
+
+.pac-container {
+    border-radius: 6px;
+    border: 1px solid #e1e5e9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-top: 2px;
+    z-index: 1001 !important;
+    position: absolute !important;
+    background-color: #fff !important;
+    max-height: 300px !important;
+    overflow-y: auto !important;
+
+    .pac-item {
+        padding: 10px 15px;
+        border-bottom: 1px solid #f8f9fa;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: #f8f9fa;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .pac-item-query {
+        font-size: 14px;
+        color: #333;
+        font-weight: 500;
+    }
+
+    .pac-matched {
+        font-weight: 500;
+        color: $accent_color;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #search-location {
+        font-size: 16px;
+    }
+
+    .pac-container {
+        width: calc(100vw - 30px) !important;
+        left: 15px !important;
+    }
+}
+
+/* Loading state */
+.search-loading {
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 16px;
+        border: 2px solid #f3f3f3;
+        border-top: 2px solid $accent_color;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+}
+
+@keyframes spin {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
+}

@@ -1,0 +1,160 @@
+@import "layout-list";
+@import "layout-grid";
+
+.archive-service{
+	.price-filter {
+		@include d-flex();
+		.filter {
+			margin-right: 10px;
+			@include d-flex();
+			span {
+				line-height: 47px;
+				padding-right: 5px;
+				padding-left: 5px;
+				background-color: $accent_color;
+				color: #fff;
+				border-radius: 4px;
+			}
+			input {
+				border-radius: 4px;
+				min-width: 80px;
+			}
+		}
+		.select2{
+			border-radius: 4px;
+			border: 1px solid #ddd;
+			padding: 10.5px 16px;
+			background-color: #fff;
+			min-width: 100px;
+		}
+		select {
+			background-color: transparent;
+		}
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+		input[type="number"] {
+			-moz-appearance: textfield;
+		}
+	}
+	#map{
+		.service-thumbnail{
+			display: none;
+		}
+	}
+}
+
+.civi-service-item {
+	position: relative;
+	border-radius: 16px;
+	border: 1px solid $border_color;
+	background-color: #fff;
+	@include transition(box-shadow 0.3s);
+	@include box-shadow(0 0 0 0 rgba(0, 0, 0, 0.01));
+	cursor: pointer;
+	&.civi-service-featured{
+		border-color: #ffd75e;
+	}
+	&:hover {
+		@include box-shadow(0 18px 22px -5px rgba(0, 0, 0, 0.05));
+	}
+	a:not(.civi-link-item){
+		position: relative;
+		z-index: 2;
+	}
+	.candidate-current-position{
+		font-size: 16px;
+		font-weight: 500;
+		color: $accent_color;
+	}
+	.service-title{
+		font-size: 18px;
+		font-weight: 500;
+		margin-bottom: 0;
+		margin-top: 6px;
+		a{
+			color: $primary_color;
+			&:hover{
+				color: $accent_color;
+			}
+		}
+	}
+	.info-inner{
+		@include d-flex();
+		@include align-items-center();
+		width: 100%;
+		h4{
+			font-size: 14px;
+			margin-bottom: 2px;
+		}
+	}
+	.image-candidates {
+		@include flex(0 0 45px);
+		height: 45px;
+		background-color: #f9f9f9;
+		text-align: center;
+		line-height: 45px;
+		border-radius: 50%;
+		font-size: 14px;
+		margin-right: 12px;
+	}
+	.des-service{
+		padding-bottom: 24px;
+	}
+	.price-inner{
+		@include d-flex();
+		@include align-items-center();
+		span{
+			font-weight: 500;
+		}
+		.price{
+			font-size: 24px;
+			color: $accent_color;
+			padding-left: 6px;
+		}
+	}
+	.civi-rating-wrapper{
+		font-size: 14px;
+		.rating-count{
+			padding-left: 0;
+			&:before{
+				content: none;
+			}
+		}
+	}
+
+}
+
+@media (max-width: 576px) {
+	.archive-service{
+		.price-filter {
+			display: block;
+			.filter{
+				margin-right: 0;
+				margin-bottom: 10px;
+			}
+			.select2{
+				min-width: 100%;
+			}
+		}
+	}
+	.civi-service-item {
+		.candidate-header {
+			position: relative;
+		}
+		.candidate-status-inner {
+			position: absolute;
+			right: 0;
+		}
+		.review-count {
+			display: none;
+		}
+		.candidate-rating-wrapper {
+			margin-top: 0;
+		}
+	}
+}
+
+

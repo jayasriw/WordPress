@@ -1,0 +1,21 @@
+.service-faq-details{
+  .faq-inner + .faq-inner{
+    padding-top: 24px;
+    margin-top: 24px;
+    border-top: 1px solid $border-color;
+  }
+  .faq-header{
+    @include d-flex();
+    @include justify-content-between();
+    @include align-items-center();
+    cursor: pointer;
+    h5{
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+  }
+  .faq-content{
+    margin-top: 18px;
+    display: none;
+  }
+}

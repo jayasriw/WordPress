@@ -1,0 +1,29 @@
+.elementor-widget-civi-freelancer-carousel .civi-box {
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+}
+.elementor-widget-civi-freelancer-carousel .civi-box .slide-content {
+  position: absolute;
+  right: 60px;
+  bottom: 80px;
+}
+.elementor-widget-civi-freelancer-carousel .civi-box .slide-content .title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+}
+.elementor-widget-civi-freelancer-carousel .civi-box .slide-content .title span {
+  font-weight: 600;
+}
+.elementor-widget-civi-freelancer-carousel .rating {
+  display: flex;
+  align-items: center;
+}
+.elementor-widget-civi-freelancer-carousel .rating .star i {
+  color: #FFD75E;
+  margin-right: 2px;
+}
+
+/*# sourceMappingURL=freelancer-carousel.css.map */

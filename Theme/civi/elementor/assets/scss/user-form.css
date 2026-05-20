@@ -1,0 +1,45 @@
+.form-account .form-group {
+  margin-bottom: 24px;
+}
+.form-account label span.require {
+  color: red;
+  margin-left: 5px;
+}
+
+.elementor-widget-civi-user-form .civi-reset-password-wrap {
+  display: none;
+}
+.elementor-widget-civi-user-form .form-account {
+  display: none;
+}
+.elementor-widget-civi-user-form .civi-reset-password-wrap.active {
+  display: block;
+}
+.elementor-widget-civi-user-form .form-account.active {
+  display: block;
+}
+.elementor-widget-civi-user-form .el-uf-item {
+  display: none;
+}
+.elementor-widget-civi-user-form .el-uf-item.active {
+  display: block;
+}
+.elementor-widget-civi-user-form .el-user-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 16px;
+}
+.elementor-widget-civi-user-form .el-uf-content {
+  padding-top: 30px;
+}
+.elementor-widget-civi-user-form .el-uf-nav a {
+  font-size: 20px;
+}
+.elementor-widget-civi-user-form .el-uf-nav a.active {
+  color: var(--civi-color-accent);
+}
+.elementor-widget-civi-user-form .el-uf-nav a + a {
+  margin-left: 10px;
+}
+
+/*# sourceMappingURL=user-form.css.map */

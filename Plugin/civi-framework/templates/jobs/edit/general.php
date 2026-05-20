@@ -1,0 +1,248 @@
+<?php
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
+}
+global $jobs_data, $jobs_meta_data, $hide_jobs_fields;
+$jobs_days_closing = civi_get_option('jobs_number_days', true);
+$jobs_date_mode = civi_get_option('jobs_date_mode', 'days');
+$enable_ai_helper = civi_get_option('enable_ai_helper');
+$enable_add_new_job_categories = civi_get_option('enable_add_new_job_categories');
+$ai_key = civi_get_option('ai_key');
+$jobs_id = !empty($jobs_data->ID) ? $jobs_data->ID : 0;
+$jobs_user_days_closing = isset($jobs_meta_data[CIVI_METABOX_PREFIX . 'jobs_days_closing'][0]) ? $jobs_meta_data[CIVI_METABOX_PREFIX . 'jobs_days_closing'][0] : '';
+$jobs_user_closing_date = '';
+
+if (!$jobs_user_days_closing && $jobs_id) {
+	$enable_jobs_expires = get_post_meta($jobs_id, CIVI_METABOX_PREFIX . 'enable_jobs_expires', true);
+	if ($enable_jobs_expires == '1') {
+		$jobs_user_days_closing = '0';
+	} else {
+		$jobs_user_days_closing = civi_get_option('jobs_number_days', true);
+	}
+}
+
+if ($jobs_user_days_closing && $jobs_id) {
+	$post_date = get_the_date('Y-m-d', $jobs_id);
+	if ($post_date) {
+		$closing_timestamp = strtotime($post_date . '+' . intval($jobs_user_days_closing) . ' days');
+		if ($closing_timestamp) {
+			$jobs_user_closing_date = date('Y-m-d', $closing_timestamp);
+		}
+	}
+}
+?>
+<div class="row">
+    <?php if (!in_array('fields_jobs_name', $hide_jobs_fields)) : ?>
+        <div class="form-group col-md-12">
+            <label for="jobs_title"><?php esc_html_e('Job title', 'civi-framework') ?> <sup>*</sup></label>
+            <input type="text" id="jobs_title" name="jobs_title"
+                placeholder="<?php esc_attr_e('Name', 'civi-framework') ?>"
+                value="<?php print sanitize_text_field($jobs_data->post_title); ?>">
+        </div>
+    <?php endif; ?>
+    <?php if (!in_array('fields_jobs_category', $hide_jobs_fields)) : ?>
+        <div class="form-group col-lg-6">
+            <label><?php esc_html_e('Jobs Categories', 'civi-framework') ?> <sup>*</sup></label>
+            <div class="select2-field">
+                <?php
+                $taxonomy = 'jobs-categories';
+                $job_id = !empty($jobs_data->ID) && is_numeric($jobs_data->ID) ? $jobs_data->ID : 0;
+
+                if ($job_id === 0) {
+                    return;
+                }
+
+                $term_count = wp_count_terms($taxonomy, ['hide_empty' => false]);
+
+                if ($term_count <= 150): ?>
+                    <select data-placeholder="<?php esc_attr_e('Select categories', 'civi-framework'); ?>"
+                        class="civi-select2" name="jobs_categories" data-taxonomy="<?php echo esc_attr($taxonomy); ?>">
+                        <?php civi_get_taxonomy_by_post_id($job_id, $taxonomy, true); ?>
+                    </select>
+                <?php else: ?>
+                    <select data-placeholder="<?php esc_attr_e('Select categories', 'civi-framework'); ?>"
+                        class="civi-ajax-select2" name="jobs_categories" data-taxonomy="<?php echo esc_attr($taxonomy); ?>">
+                        <?php
+                        $selected_categories = get_the_terms($job_id, $taxonomy);
+                        if (!is_wp_error($selected_categories) && !empty($selected_categories)) {
+                            foreach ($selected_categories as $term) {
+                                echo '<option value="' . esc_attr($term->term_id) . '" selected>' . esc_html($term->name) . '</option>';
+                            }
+                        }
+                        ?>
+                    </select>
+                <?php endif; ?>
+
+            </div>
+        </div>
+        <?php if ($enable_add_new_job_categories) : ?>
+            <div class="form-group col-md-6">
+                <label for="jobs_new_categories"><?php esc_html_e('Add New Categories', 'civi-framework'); ?></label>
+                <input type="text" id="jobs_new_categories" name="jobs_new_categories" value="" placeholder="<?php esc_attr_e('Enter new Categories', 'civi-framework'); ?>">
+            </div>
+        <?php endif; ?>
+    <?php endif; ?>
+    <?php if (!in_array('fields_jobs_type', $hide_jobs_fields)) : ?>
+        <div class="form-group col-lg-6">
+            <label><?php esc_html_e('Job type', 'civi-framework') ?> <sup>*</sup></label>
+            <div class="form-select">
+                <div class="select2-field select2-multiple">
+                    <select data-placeholder="<?php esc_attr_e('Select an option', 'civi-framework'); ?>"
+                        multiple="multiple" class="civi-select2" name="jobs_type">
+                        <?php civi_get_taxonomy_by_post_id($jobs_data->ID, 'jobs-type', true, false, true, 'jobs_type_order'); ?>
+                    </select>
+                </div>
+                <i class="fas fa-angle-down"></i>
+            </div>
+        </div>
+    <?php endif; ?>
+    <?php if (!in_array('fields_jobs_skills', $hide_jobs_fields)) : ?>
+        <div class="form-group col-md-12">
+            <label><?php esc_html_e('Skills', 'civi-framework') ?> <sup>*</sup></label>
+            <div class="form-select">
+                <div class="select2-field select2-multiple">
+                    <?php
+                    $taxonomy = 'jobs-skills';
+                    $job_id = !empty($jobs_data->ID) && is_numeric($jobs_data->ID) ? $jobs_data->ID : 0;
+                    if ($job_id === 0) {
+                        return;
+                    }
+                    $term_count = wp_count_terms($taxonomy, ['hide_empty' => false]);
+                    if ($term_count <= 150): ?>
+                        <select data-placeholder="<?php esc_attr_e('Select skills', 'civi-framework'); ?>" multiple="multiple"
+                            class="civi-select2" name="jobs_skills" data-taxonomy="<?php echo esc_attr($taxonomy); ?>">
+                            <?php civi_get_taxonomy_by_post_id($job_id, $taxonomy, false); ?>
+                        </select>
+                    <?php else: ?>
+                        <select data-placeholder="<?php esc_attr_e('Select skills', 'civi-framework'); ?>" multiple="multiple"
+                            class="civi-ajax-select2" name="jobs_skills" data-taxonomy="<?php echo esc_attr($taxonomy); ?>">
+                            <?php
+                            $selected_skills = get_the_terms($job_id, $taxonomy);
+                            if (!is_wp_error($selected_skills) && !empty($selected_skills)) {
+                                foreach ($selected_skills as $term) {
+                                    echo '<option value="' . esc_attr($term->term_id) . '" selected>' . esc_html($term->name) . '</option>';
+                                }
+                            }
+                            ?>
+                        </select>
+                    <?php endif; ?>
+
+                </div>
+                <i class="fas fa-angle-down"></i>
+            </div>
+        </div>
+    <?php endif; ?>
+    <?php if (!in_array('fields_jobs_des', $hide_jobs_fields)) : ?>
+        <div class="form-group col-md-12">
+            <div class="flex">
+                <label class="label-des-jobs"><?php esc_html_e('Description', 'civi-framework'); ?> <sup>*</sup></label>
+                <?php
+                if ($enable_ai_helper == 1 && $ai_key != '') {
+                ?>
+                    <div class="ai-helper-wrapper">
+                        <span class="ai-helper" data-popup="ai-popup"><i class="fal fa-magic"></i><?php esc_html_e('AI Helper', 'civi-framework'); ?></span>
+                    </div>
+                <?php
+                }
+                ?>
+            </div>
+            <?php
+            $content = $jobs_data->post_content;
+            $editor_id = 'jobs_des';
+            $settings = array(
+                'wpautop' => true,
+                'media_buttons' => false,
+                'textarea_name' => $editor_id,
+                'textarea_rows' => get_option('default_post_edit_rows', 8),
+                'tabindex' => '',
+                'editor_css' => '',
+                'editor_class' => '',
+                'teeny' => false,
+                'dfw' => false,
+                'tinymce' => true,
+                'quicktags' => true
+            );
+            wp_editor(html_entity_decode(stripcslashes($content)), $editor_id, $settings); ?>
+        </div>
+    <?php endif; ?>
+    <?php if (!in_array('fields_jobs_career', $hide_jobs_fields)) : ?>
+        <div class="form-group col-lg-6">
+            <label><?php esc_html_e('Career level', 'civi-framework') ?></label>
+            <div class="select2-field">
+                <select name="jobs_career" class="civi-select2">
+                    <?php civi_get_taxonomy_by_post_id($jobs_data->ID, 'jobs-career', false, false, true, 'jobs_career_order'); ?>
+                </select>
+            </div>
+        </div>
+    <?php endif; ?>
+    <?php if (!in_array('fields_jobs_experience', $hide_jobs_fields)) : ?>
+        <div class="form-group col-lg-6">
+            <label><?php esc_html_e('Experience', 'civi-framework') ?></label>
+            <div class="select2-field">
+                <select name="jobs_experience" class="civi-select2">
+                    <?php civi_get_taxonomy_by_post_id($jobs_data->ID, 'jobs-experience', false, false, true, 'jobs_experience_order'); ?>
+                </select>
+            </div>
+        </div>
+    <?php endif; ?>
+    <?php if (!in_array('fields_jobs_qualification', $hide_jobs_fields)) : ?>
+        <div class="form-group col-lg-6">
+            <label><?php esc_html_e('Qualification', 'civi-framework') ?></label>
+            <div class="form-select">
+                <div class="select2-field select2-multiple">
+                    <select data-placeholder="<?php esc_attr_e('Select an option', 'civi-framework'); ?>"
+                        multiple="multiple" class="civi-select2" name="jobs_qualification">
+                        <?php civi_get_taxonomy_by_post_id($jobs_data->ID, 'jobs-qualification', false, false, true, 'jobs_qualification_order'); ?>
+                    </select>
+                </div>
+                <i class="fas fa-angle-down"></i>
+            </div>
+        </div>
+    <?php endif; ?>
+    <?php if (!in_array('fields_jobs_quantity', $hide_jobs_fields)) : ?>
+        <div class="form-group col-lg-6">
+            <label><?php esc_html_e('Quantity to be recruited', 'civi-framework') ?></label>
+            <div class="select2-field">
+                <select name="jobs_quantity" class="civi-select2">
+                    <?php for ($quantity = 0; $quantity <= 10; $quantity++) {
+                        if ($quantity == 0) { ?>
+                            <option selected value=""><?php esc_attr_e('Select an option', 'civi-framework'); ?></option>
+                        <?php } else { ?>
+                            <option <?php if (isset($jobs_meta_data[CIVI_METABOX_PREFIX . 'jobs_quantity']) && $jobs_meta_data[CIVI_METABOX_PREFIX . 'jobs_quantity'][0] == $quantity) {
+                                        echo 'selected';
+                                    } ?> value="<?php echo $quantity; ?>">
+                                <?php echo $quantity; ?>
+                            </option>
+                    <?php }
+                    } ?>
+                </select>
+            </div>
+        </div>
+    <?php endif; ?>
+    <?php if (!in_array('fields_jobs_gender', $hide_jobs_fields)) : ?>
+        <div class="form-group col-lg-6">
+            <label><?php esc_html_e('Gender', 'civi-framework') ?></label>
+            <div class="select2-field">
+                <select name="jobs_gender" class="civi-select2">
+                    <?php civi_get_taxonomy_by_post_id($jobs_data->ID, 'jobs-gender', false, false, true, 'jobs_gender_order'); ?>
+                </select>
+            </div>
+        </div>
+    <?php endif; ?>
+    <?php if (!in_array('fields_closing_days', $hide_jobs_fields)) : ?>
+        <div class="form-group col-lg-6">
+            <?php if ($jobs_date_mode === 'closing_date') : ?>
+                <label for="jobs_closing_date"><?php esc_html_e('Closing Date', 'civi-framework'); ?></label>
+                <input type="date" id="jobs_closing_date" name="jobs_closing_date"
+                    value="<?php echo esc_attr($jobs_user_closing_date); ?>" min="<?php echo date('Y-m-d'); ?>">
+                <small class="form-text text-muted" id="remaining_days_text"><?php esc_html_e('Remaining days will be calculated automatically', 'civi-framework'); ?></small>
+                <input type="hidden" id="jobs_days_closing" name="jobs_days_closing" value="<?php echo esc_attr($jobs_user_days_closing); ?>">
+            <?php else : ?>
+                <label for="jobs_days_closing"><?php esc_html_e('Closing days', 'civi-framework'); ?></label>
+                <input type="text" id="jobs_days_closing" name="jobs_days_closing"
+                    placeholder="<?php echo $jobs_days_closing; ?>"
+                    value="<?php echo esc_attr($jobs_user_days_closing); ?>">
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
+</div>

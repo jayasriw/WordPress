@@ -1,0 +1,184 @@
+/*candidate_cate*/
+div.elementor-widget-civi-candidate-category .cate-title {
+    margin: 0 0 0 20px;
+}
+
+div.elementor-widget-civi-candidate-category .icon-cate:before {
+    right: auto;
+    left: -15px;
+}
+
+/*companies*/
+div.elementor-widget-civi-companies-category.civi-layout-02 .button-wrapper{
+    margin-left: 0;
+    margin-right: 16px;
+}
+
+div.elementor-widget-civi-companies-category.civi-layout-02 .list-company{
+    margin-right: 0;
+    margin-left: 16px;
+}
+
+div.civi-jobs-apply .civi-button-apply:after{
+    padding-left: 0;
+    padding-right: 12px;
+}
+
+div.service-tabs .service-nav li + li {
+    margin-left: 0;
+    margin-right: 24px;
+}
+
+div.civi-mailchimp-form-style-01 label {
+    margin-right: 0;
+    margin-left: 12px;
+}
+
+/*search-horizontal*/
+
+div.civi-search-horizontal .form-group i{
+    right: 18px;
+    left: auto;
+}
+div.civi-search-horizontal input {
+    padding-right: 48px;
+    padding-left: 0;
+}
+div.civi-search-horizontal .form-group i ~ .select2.select2-container {
+    padding-left: 0;
+    padding-right: 55px;
+}
+
+div.civi-testimonial-style-03 .info .testimonial-logo {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: auto;
+}
+div.civi-search-horizontal .form-group:not(:first-child) {
+    border-right: 1px solid var(--civi-color-border);
+    border-left: 0;
+}
+
+div.civi-search-horizontal .list-category:after {
+    padding-left: 6px;
+    padding-right: 0;
+}
+
+div.civi-form-location i.fa-angle-down{
+    left: 12px !important;
+}
+
+
+/*search-vertical*/
+div.civi-search-vertical .form-group i {
+    left: auto;
+    right: 18px;
+}
+div.civi-search-vertical .form-group input[name="s"], div.civi-search-vertical .form-group .input-search-location {
+    padding-left: 0;
+    padding-right: 45px;
+}
+div.civi-search-vertical .form-group i ~ .select2.select2-container .select2-selection {
+    padding-left: 0;
+    padding-right: 45px;
+}
+.civi-search-vertical .form-group i{
+    left: auto;
+    right: 18px;
+}
+.select2.select2-container .select2-selection__arrow {
+    margin-left: 10px;
+}
+.civi-search-vertical .form-group input[name="s"]{
+    padding-left: 0;
+    padding-right: 45px;
+}
+.civi-search-vertical .tab-dashboard .tab-item + .tab-item {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+ul.ui-autocomplete{
+    right: auto !important;
+}
+
+.tel-group .select2.select2-container .select2-selection__rendered {
+    background-position: left;
+}
+
+.tel-group .select2.select2-container .select2-selection__rendered {
+    background-image: url(../../images/flags.png) !important;
+}
+
+.select2-container[dir=rtl] .select2-selection--single .select2-selection__rendered {
+    padding-right: 8px !important;
+    padding-left: 0 !important;
+}
+
+div.civi-list .icon{
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+div.civi-social-networks.style-icon-title .link-icon {
+    margin-right: 0;
+    margin-left: 12px;
+}
+
+div.elementor-widget-civi-jobs-category.elementor-position-left .icon-cate {
+    margin-left: 18px;
+    margin-right: 0;
+}
+
+div.elementor-grid {
+    display: grid;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}
+
+.job-alerts-form .form-select i.fa-angle-down {
+    right: auto !important;
+}
+
+.civi-testimonial-style-03 .info{
+    justify-content: end;
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+div.job-alerts-wrapper .form-heading svg {
+    margin-left: 16px;
+    margin-right: 0;
+}
+
+ul.nav-modern-tabs li+li {
+    margin-left: 0;
+    margin-right: 32px;
+}
+
+.civi-service-item.layout-grid .service-status-inner{
+    left: auto;
+    right: 24px;
+}
+
+.elementor-slick-slider .slick-prev:before {
+    content: "\f054" !important;
+}
+.elementor-slick-slider .slick-next:before {
+    content: "\f053" !important;
+}
+
+body.rtl .lg-outer.lg-css .lg-current,
+body.rtl .lg-outer.lg-css3 .lg-current,
+body.rtl .lg-outer.lg-css3 .lg-next-slide,
+body.rtl .lg-outer.lg-css3 .lg-prev-slide {
+    display: block !important;
+}
+
+@media (min-width: 768px){
+    div.elementor-widget-civi-icon-box.elementor-position-left .civi-icon-wrap {
+        margin-left: 20px;
+        margin-right: 0;
+    }
+}

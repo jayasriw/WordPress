@@ -1,0 +1,25 @@
+.service-related-details{
+  .civi-service-item{
+    + .civi-service-item{
+      margin-top: 16px;
+    }
+  }
+  .header-related{
+    @include d-flex();
+    @include justify-content-between();
+    margin-bottom: 30px;
+    h4{
+      margin-bottom: 0;
+      line-height: 1;
+    }
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .civi-service-item.layout-list {
+    display: block;
+    .service-thumbnail img{
+      border-radius: 16px 16px 0 0;
+    }
+  }
+}

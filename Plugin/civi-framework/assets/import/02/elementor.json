@@ -1,0 +1,97 @@
+{
+  "elementor_cpt_support": ["post", "page", "ic_mega_menu"],
+  "elementor_disable_typography_schemes": "yes",
+  "elementor_unfiltered_files_upload": "1",
+  "elementor_scheme_color": {
+    "1": "#111111",
+    "2": "#999999",
+    "3": "#555555",
+    "4": "#007456"
+  },
+  "elementor_scheme_typography": {
+    "1": { "font_family": "Inter", "font_weight": "600" },
+    "2": { "font_family": "Inter", "font_weight": "400" },
+    "3": { "font_family": "Inter", "font_weight": "400" },
+    "4": { "font_family": "Inter", "font_weight": "500" }
+  },
+  "elementor_scheme_color-picker": {
+    "1": "#111111",
+    "2": "#999999",
+    "3": "#555555",
+    "4": "#007456",
+    "5": "#4054b2",
+    "6": "#23a455",
+    "7": "#000",
+    "8": "#fff"
+  },
+  "kit_settings": {
+    "system_colors": [
+      {
+        "_id": "primary",
+        "title": "Primary",
+        "color": "#111111"
+      },
+      {
+        "_id": "secondary",
+        "title": "Secondary",
+        "color": "#999999"
+      },
+      {
+        "_id": "text",
+        "title": "Text",
+        "color": "#555555"
+      },
+      {
+        "_id": "accent",
+        "title": "Accent",
+        "color": "#007456"
+      }
+    ],
+    "system_typography": [
+      {
+        "_id": "primary",
+        "title": "Primary",
+        "typography_typography": "custom",
+        "typography_font_family": "Inter",
+        "typography_font_weight": "600"
+      },
+      {
+        "_id": "secondary",
+        "title": "Secondary",
+        "typography_typography": "custom",
+        "typography_font_family": "Inter",
+        "typography_font_weight": "400"
+      },
+      {
+        "_id": "text",
+        "title": "Text",
+        "typography_typography": "custom",
+        "typography_font_family": "Inter",
+        "typography_font_weight": "400"
+      },
+      {
+        "_id": "accent",
+        "title": "Accent",
+        "typography_typography": "custom",
+        "typography_font_family": "Inter",
+        "typography_font_weight": "500"
+      }
+    ],
+    "default_generic_fonts": "sans-serif",
+    "container_width": {
+      "unit": "px",
+      "size": 1200,
+      "sizes": []
+    },
+    "space_between_widgets": {
+      "unit": "px",
+      "size": 20,
+      "sizes": []
+    },
+    "page_title_selector": "h1.entry-title",
+    "stretched_section_container": "",
+    "active_breakpoints": ["viewport_mobile", "viewport_tablet"],
+    "viewport_md": 768,
+    "viewport_lg": 1025
+  }
+}
