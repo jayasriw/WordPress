@@ -1,0 +1,16 @@
+.candidate-service-details{
+  .civi-service-item{
+    + .civi-service-item{
+      margin-top: 16px;
+    }
+  }
+  .header-service{
+    @include d-flex();
+    @include justify-content-between();
+    margin-bottom: 30px;
+    h4{
+      margin-bottom: 0;
+      line-height: 1;
+    }
+  }
+}
