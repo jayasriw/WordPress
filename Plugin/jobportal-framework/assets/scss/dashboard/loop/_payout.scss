@@ -1,0 +1,67 @@
+.civi-payout-dashboard{
+  ul{
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 0;
+  }
+  .payout-item{
+    border: 1px solid $border-color;
+    background-color: #fff;
+    border-radius: 16px;
+    + .payout-item{
+      margin-top: 12px;
+    }
+  }
+  .title{
+    @include d-flex();
+    @include align-items-center();
+    position: relative;
+    padding: 24px;
+    font-size: 18px;
+    color: $text_color;
+    margin-bottom: 0;
+    line-height: 1;
+    cursor: pointer;
+    &:before{
+      content: '';
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      border: 2px solid #999;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    &:after{
+      content: '';
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      background-color: transparent;
+      border-radius: 50%;
+      position: absolute;
+      left: 29px;
+    }
+    &.active{
+      &:before{
+        border-color: $accent_color;
+      }
+      &:after{
+        background-color: $accent_color;
+      }
+    }
+  }
+  .content{
+    display: none;
+    padding: 0 24px 24px;
+    .form-group + .form-group{
+      margin-top: 24px;
+    }
+  }
+  label{
+    font-weight: 500;
+    color: $primary_color;
+  }
+  #btn-submit-payout{
+    margin-top: 24px;
+  }
+}

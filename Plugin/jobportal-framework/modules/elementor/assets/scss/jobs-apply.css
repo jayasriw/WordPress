@@ -1,0 +1,41 @@
+.jobportal-jobs-apply .jobs-archive-header {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.jobportal-jobs-apply .jobportal-jobs-item {
+  padding: 32px;
+}
+.jobportal-jobs-apply .jobportal-jobs-item + .jobportal-jobs-item {
+  margin-top: 24px;
+}
+.jobportal-jobs-apply .jobportal-jobs-item .jobs-header-left {
+  display: block;
+}
+.jobportal-jobs-apply .jobportal-jobs-item .jobs-header-right {
+  height: auto;
+}
+.jobportal-jobs-apply .jobs-title {
+  margin-bottom: 12px;
+}
+.jobportal-jobs-apply .cate-wapprer {
+  color: var(--jobportal-color-secondary);
+}
+.jobportal-jobs-apply .jobportal-button-apply:after {
+  content: "\f054";
+  font-family: "Font Awesome 5 Pro";
+  font-size: 12px;
+  padding-left: 12px;
+}
+
+@media (max-width: 767px) {
+  .jobportal-jobs-apply .jobportal-jobs-item.layout-list .jobs-archive-header {
+    display: block;
+  }
+  .jobportal-jobs-apply .jobportal-jobs-item.layout-list .jobs-header-right {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+/*# sourceMappingURL=jobs-apply.css.map */

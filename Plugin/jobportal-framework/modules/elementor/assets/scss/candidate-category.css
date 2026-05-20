@@ -1,0 +1,59 @@
+.elementor-widget-jobportal-candidate-category .cate-inner {
+  background-color: #fff;
+  padding: 28px;
+  border: 1px solid var(--jobportal-color-border);
+  border-radius: 16px;
+  position: relative;
+}
+.elementor-widget-jobportal-candidate-category .cate-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+.elementor-widget-jobportal-candidate-category .cate-title {
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0 20px 0 0;
+}
+.elementor-widget-jobportal-candidate-category .icon-arrow i {
+  color: var(--jobportal-color-secondary);
+}
+.elementor-widget-jobportal-candidate-category .icon-cate {
+  position: relative;
+  display: inline-block;
+}
+.elementor-widget-jobportal-candidate-category .icon-cate:before {
+  content: "";
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 215, 94, 0.2);
+  display: block;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  z-index: 1;
+  border-radius: 50%;
+}
+.elementor-widget-jobportal-candidate-category .icon-cate i {
+  font-size: 20px;
+  position: relative;
+  z-index: 2;
+  color: var(--jobportal-color-accent);
+}
+.elementor-widget-jobportal-candidate-category .elementor-grid-candidate.layout-02 .cate-inner {
+  text-align: center;
+}
+.elementor-widget-jobportal-candidate-category .elementor-grid-candidate.layout-02 .icon-cate:before {
+  content: "";
+  display: none;
+}
+.elementor-widget-jobportal-candidate-category .elementor-grid-candidate.layout-02 .cate-content {
+  justify-content: center;
+}
+.elementor-widget-jobportal-candidate-category .elementor-grid-candidate.layout-02 .cate-title {
+  margin: 0;
+}
+
+/*# sourceMappingURL=candidate-category.css.map */

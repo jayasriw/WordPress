@@ -1,0 +1,122 @@
+@import "settings/variables";
+
+.ux-pending-approval {
+  display: none;
+  text-align: center;
+  padding: 20px 16px;
+
+  .title {
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.4;
+    text-align: center;
+    color: $accent_color;
+  }
+
+  .desc {
+    margin: 0 auto 10px auto;
+    max-width: 420px;
+    color: var(--civi-text-muted, #6b7280);
+  }
+
+  .notes {
+    margin: 0 auto 24px auto;
+    max-width: 420px;
+    padding: 0;
+    list-style: none;
+    li {
+      margin: 3px 0;
+      color: var(--civi-text-muted, #6b7280);
+    }
+  }
+
+  .actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+
+    .btn {
+      min-width: 160px;
+    }
+
+    .btn-secondary {
+      margin-top: 12px;
+      background: transparent;
+      border: 1px solid var(--civi-border, #e5e7eb);
+      color: var(--civi-text, #111827);
+    }
+
+    .btn.is-disabled,
+    .is-disabled {
+      opacity: 0.6;
+      pointer-events: none;
+      filter: grayscale(20%);
+    }
+  }
+
+  .support-link {
+    margin-top: 10px;
+    font-size: 14px;
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        color: var(--civi-color-accent, #007456);
+      }
+    }
+  }
+}
+
+.form-account {
+  .form-group {
+    margin-bottom: 24px;
+  }
+  label {
+    span.require {
+      color: red;
+      margin-left: 5px;
+    }
+  }
+}
+
+.elementor-widget-civi-user-form {
+  .civi-reset-password-wrap {
+    display: none;
+  }
+  .form-account {
+    display: none;
+  }
+  .civi-reset-password-wrap.active {
+    display: block;
+  }
+  .form-account.active {
+    display: block;
+  }
+  .el-uf-item {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  .el-user-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 16px;
+  }
+  .el-uf-content {
+    padding-top: 30px;
+  }
+  .el-uf-nav {
+    a {
+      font-size: 20px;
+      &.active {
+        color: $accent_color;
+      }
+      + a {
+        margin-left: 10px;
+      }
+    }
+  }
+}

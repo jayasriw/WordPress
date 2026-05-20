@@ -1,0 +1,53 @@
+.civi-service-item.layout-grid {
+	.service-thumbnail{
+		img{
+			border-radius: 16px 16px 0 0;
+			height: 210px;
+			object-fit: cover;
+			width: 100%;
+		}
+	}
+	.service-content{
+		padding: 24px;
+	}
+	.service-header{
+		margin-bottom: 20px;
+	}
+	.price-inner{
+		padding-top: 20px;
+		margin-top: 24px;
+		border-top: 1px solid $border-color;
+	}
+	.service-status-inner{
+		@include d-flex();
+		position: absolute;
+		top: 24px;
+		right: 24px;
+		.service-status{
+			margin-top: 0;
+			width: auto;
+			margin-right: 12px;
+		}
+		.featured,.btn-add-to-wishlist{
+			width: 36px;
+			height: 36px;
+			background-color: #ffff;
+			border-radius: 50%;
+			text-align: center;
+			display: block;
+		}
+		.featured{
+			img{
+				position: relative;
+				top: 6px;
+				margin: 0 auto;
+			}
+		}
+		.btn-add-to-wishlist{
+			span{
+				position: relative;
+				top: 8px;
+			}
+		}
+	}
+}

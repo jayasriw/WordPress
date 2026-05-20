@@ -1,0 +1,27 @@
+.flatpickr-day {
+	&.selected,
+	&.startRange,
+	&.endRange,
+	&.selected.inRange,
+	&.startRange.inRange,
+	&.endRange.inRange,
+	&.selected:focus,
+	&.startRange:focus,
+	&.endRange:focus,
+	&.selected:hover,
+	&.startRange:hover,
+	&.endRange:hover,
+	&.selected.prevMonthDay,
+	&.startRange.prevMonthDay,
+	&.endRange.prevMonthDay,
+	&.selected.nextMonthDay,
+	&.startRange.nextMonthDay,
+	&.endRange.nextMonthDay {
+		background: var(--civi-color-accent) !important;
+		-webkit-box-shadow: none !important;
+		box-shadow: none !important;
+		color: #fff !important;
+		border-color: var(--civi-color-accent) !important;
+	}
+}
+

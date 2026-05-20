@@ -1,0 +1,151 @@
+.jobportal-search-horizontal .search-horizontal-inner {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border-radius: 50px;
+  border: 1px solid var(--jobportal-color-border);
+  background-color: #fff;
+  -webkit-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.03);
+  -moz-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.03);
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.03);
+}
+.jobportal-search-horizontal .form-group {
+  flex-grow: 1;
+}
+.jobportal-search-horizontal .form-group:not(:first-child) {
+  border-left: 1px solid var(--jobportal-color-border);
+}
+.jobportal-search-horizontal .form-group:first-child input {
+  border-radius: 50px 0 0 50px;
+}
+.jobportal-search-horizontal .form-group i {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: var(--jobportal-color-secondary);
+  font-size: 20px;
+  font-weight: 400;
+  z-index: 999;
+}
+.jobportal-search-horizontal .form-group i ~ .select2.select2-container {
+  padding-left: 55px;
+}
+.jobportal-search-horizontal .form-group:last-child {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.jobportal-search-horizontal .form-group input {
+  height: 70px;
+  border: 0;
+  padding-left: 48px;
+}
+.jobportal-search-horizontal .radius input {
+  height: 47px;
+  padding-left: 5px;
+}
+.jobportal-search-horizontal .jobportal-form-location {
+  border-left: 1px solid var(--jobportal-color-border);
+}
+.jobportal-search-horizontal .jobportal-select2 {
+  height: 70px !important;
+  padding-left: 55px;
+  max-width: 220px !important;
+}
+.jobportal-search-horizontal .select2.select2-container {
+  width: 100% !important;
+  height: 100%;
+  padding: 0 24px;
+}
+.jobportal-search-horizontal .btn-search-horizontal {
+  margin-right: 14px;
+  margin-left: 14px;
+}
+.jobportal-search-horizontal .popular-categories {
+  margin-top: 18px;
+  display: inline-block;
+}
+.jobportal-search-horizontal .jobportal-clear-top-filter {
+  color: var(--jobportal-color-secondary);
+  padding-right: 0;
+  padding-left: 14px;
+  cursor: pointer;
+  height: 70px;
+  line-height: 70px;
+}
+.jobportal-search-horizontal .jobportal-clear-top-filter:hover {
+  color: var(--jobportal-color-accent);
+}
+.jobportal-search-horizontal .list-category {
+  margin-bottom: 0;
+  list-style: none;
+  padding-left: 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.jobportal-search-horizontal .list-category a {
+  font-weight: 400;
+  color: var(--jobportal-color-primary);
+}
+.jobportal-search-horizontal .list-category a:hover {
+  color: var(--jobportal-color-accent);
+}
+.jobportal-search-horizontal .list-category li:not(:last-child) a:after {
+  content: ",";
+  padding-right: 6px;
+}
+
+.jobportal-search-horizontal-layout-01 .form-group:first-child input {
+  max-width: 250px;
+}
+
+.ui-helper-hidden-accessible {
+  display: none;
+}
+
+@media (max-width: 567px) {
+  .jobportal-search-horizontal input {
+    padding-left: 56px;
+  }
+  .jobportal-search-horizontal .search-horizontal-inner {
+    display: block;
+    border-radius: 16px;
+  }
+  .jobportal-search-horizontal .form-group:not(:first-child) {
+    border-left: 0;
+  }
+  .jobportal-search-horizontal .form-group:not(:last-child) {
+    border-bottom: 1px solid var(--jobportal-color-border);
+  }
+  .jobportal-search-horizontal .form-group i {
+    left: 26px;
+  }
+  .jobportal-search-horizontal .btn-search-horizontal {
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .jobportal-search-horizontal .select2.select2-container {
+    height: 70px;
+    line-height: 70px;
+  }
+  .jobportal-search-horizontal-layout-01 .form-group:first-child input {
+    max-width: 100%;
+    border-radius: 16px 16px 0 0;
+  }
+  .jobportal-search-horizontal-layout-01 .form-group:last-child {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/*# sourceMappingURL=search-horizontal.css.map */

@@ -1,0 +1,222 @@
+.select2 {
+  width: 100% !important;
+  .select2-selection__rendered {
+    padding: 2px 16px;
+  }
+}
+
+.select2-container--default {
+  .select2-results__option--highlighted[aria-selected],
+  .select2-results__option[aria-selected="true"] {
+    background-color: rgba(0, 116, 86, 0.05);
+    color: var(--civi-color-accent);
+  }
+  .select2-results > .select2-results__options {
+    max-height: 175px;
+  }
+  .select2-selection--multiple,
+  &.select2-container--focus .select2-selection--multiple {
+    border: 1px solid #ddd;
+  }
+  .select2-selection--multiple {
+    padding: 3px 16px;
+    .select2-selection__choice {
+      font-size: 14px;
+      color: var(--civi-color-accent);
+      background: rgba(0, 116, 86, 0.05);
+      border-radius: 30px;
+      padding: 2px 12px;
+      border: 0;
+    }
+    .select2-selection__arrow {
+      display: none;
+    }
+    .select2-selection__choice__remove {
+      margin-bottom: 2px;
+      color: var(--civi-color-accent);
+      margin-right: 5px;
+    }
+    .select2-selection__rendered {
+      padding: 0;
+    }
+  }
+}
+
+.select2-results__options {
+  -webkit-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.03);
+}
+
+.select2-results__option[aria-selected] {
+  font-size: 14px;
+}
+
+.select2-dropdown {
+  border-color: var(--civi-color-border);
+  z-index: 1051;
+}
+
+.civi-select2 {
+  option {
+    margin-bottom: 10px;
+    &:checked {
+      background-color: transparent !important;
+    }
+  }
+}
+
+.form-select i.fa-angle-down {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  right: 24px;
+  color: var(--civi-color-text);
+  font-weight: 400;
+}
+
+@include mobi {
+  .fa-angle-down::before {
+    margin-right: 24px;
+  }
+}
+
+.checkbox-inline input,
+.radio-inline input {
+  margin-right: 5px !important;
+}
+
+.select2.select2-container {
+  width: 100% !important;
+
+  .selection {
+    display: block;
+    height: 100%;
+  }
+  .select2-selection {
+    border: 0;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    padding-right: 0;
+    background-color: #fff;
+  }
+  .select2-selection__rendered {
+    line-height: normal;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .select2-selection__rendered[title^="All"] {
+    color: #999;
+  }
+
+  .select2-selection__arrow {
+    position: static;
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    b {
+      display: none;
+    }
+    &:after {
+      content: "\f078";
+      font-size: 12px;
+      font-weight: bold;
+      font-family: "Font Awesome 5 Pro";
+      color: var(--civi-color-secondary);
+      font-style: normal;
+      right: 18px;
+      width: auto;
+      height: auto;
+      margin-top: 0;
+      border: 0;
+    }
+  }
+}
+
+.select2-container {
+  .select2-dropdown {
+    border: 0;
+    top: 0;
+    -webkit-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.03);
+    -moz-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.03);
+    .select2-results__option {
+      padding: 4px 16px;
+      font-size: 15px;
+    }
+    .select2-results__options::-webkit-scrollbar-track {
+      background-color: #fff;
+      border-radius: 5px;
+    }
+    .select2-results__options::-webkit-scrollbar {
+      width: 6px;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+    }
+    .select2-results__options::-webkit-scrollbar-thumb {
+      background-color: #eee;
+      border-radius: 5px;
+    }
+  }
+  .select2-results__option[aria-selected="true"],
+  .select2-results__option[data-selected="true"] {
+    background-color: rgba(0, 116, 86, 0.05);
+    font-weight: 400;
+    color: var(--civi-color-accent);
+  }
+  .select2-results__option--highlighted[aria-selected],
+  .select2-results__option--highlighted[data-selected] {
+    background-color: rgba(0, 116, 86, 0.05);
+    color: var(--civi-color-accent);
+  }
+}
+
+body.admin-bar {
+  .select2-container {
+    .select2-dropdown {
+      top: 32px;
+    }
+  }
+}
+
+.select2-field {
+  .select2.select2-container {
+    width: 100%;
+    .select2-selection {
+      height: 47px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      padding: 10.5px 16px;
+      border-radius: 4px;
+      &--multiple {
+        padding: 0 16px;
+        height: 47px;
+        line-height: 47px;
+      }
+      .select2-selection__rendered li {
+        margin: 5px 5px 5px 0;
+      }
+    }
+  }
+}
+.form-select div.select2-multiple + i {
+  right: 16px;
+}
+@media (min-width: 769px) {
+  .jobs-search-inner .select2-field .select2.select2-container .select2-selection {
+    padding: 10.5px 16px 10.5px 40px;
+  }
+}
+
+body:has(.select2-container--open) {
+  overflow-x: hidden;
+}

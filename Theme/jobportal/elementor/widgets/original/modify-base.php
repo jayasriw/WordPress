@@ -1,0 +1,9 @@
+<?php
+
+namespace JobPortal_Elementor;
+
+defined('ABSPATH') || exit;
+
+abstract class Modify_Base
+{
+}

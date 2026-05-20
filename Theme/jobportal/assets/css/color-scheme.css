@@ -1,0 +1,302 @@
+/**
+ * JobPortal Color Scheme
+ * Primary: Teal (#0d9488)
+ * Dark: Slate (#1e293b)
+ * Secondary: Slate-500 (#64748b)
+ * Background: White (#ffffff)
+ * Light Background: Teal-50 (#f0fdfa)
+ */
+
+:root {
+  --jobportal-color-accent:     #0d9488;
+  --jobportal-color-accent-hover: #0f766e;
+  --jobportal-color-accent-light: #ccfbf1;
+  --jobportal-color-primary:    #1e293b;
+  --jobportal-color-secondary:  #64748b;
+  --jobportal-color-text:       #475569;
+  --jobportal-color-border:     #e2e8f0;
+  --jobportal-color-bg:         #ffffff;
+  --jobportal-color-bg-light:   #f0fdfa;
+  --jobportal-color-bg-dark:    #0f172a;
+  --jobportal-color-indigo:     #4f46e5;
+  --jobportal-color-indigo-light: #eef2ff;
+}
+
+/* Primary buttons & accents */
+.jobportal-button,
+.btn-jobportal,
+a.jobportal-button,
+button.jobportal-button {
+  background-color: var(--jobportal-color-accent);
+  border-color: var(--jobportal-color-accent);
+  color: #ffffff;
+}
+
+.jobportal-button:hover,
+.btn-jobportal:hover,
+a.jobportal-button:hover {
+  background-color: var(--jobportal-color-accent-hover);
+  border-color: var(--jobportal-color-accent-hover);
+  color: #ffffff;
+}
+
+/* Outline / border buttons */
+.jobportal-button.button-outline-accent {
+  background-color: transparent;
+  border: 2px solid var(--jobportal-color-accent);
+  color: var(--jobportal-color-accent);
+}
+
+.jobportal-button.button-outline-accent:hover {
+  background-color: var(--jobportal-color-accent);
+  color: #ffffff;
+}
+
+/* Links */
+a {
+  color: var(--jobportal-color-accent);
+}
+
+a:hover {
+  color: var(--jobportal-color-accent-hover);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--jobportal-color-primary);
+}
+
+/* Body text */
+body {
+  color: var(--jobportal-color-text);
+}
+
+/* Top bar */
+.jobportal-top-bar {
+  background-color: var(--jobportal-color-bg-dark);
+  color: #94a3b8;
+}
+
+/* Header */
+.site-header {
+  border-bottom: 2px solid var(--jobportal-color-border);
+}
+
+.site-header.sticky-header {
+  background-color: #ffffff;
+}
+
+/* Navigation active/hover */
+.main-menu > li > a:hover,
+.main-menu > li.current-menu-item > a,
+.main-menu > li.current-menu-ancestor > a {
+  color: var(--jobportal-color-accent);
+}
+
+/* Job listing cards */
+.jobs-item,
+.jobportal-jobs-item {
+  border: 1px solid var(--jobportal-color-border);
+  border-radius: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.jobs-item:hover,
+.jobportal-jobs-item:hover {
+  border-color: var(--jobportal-color-accent);
+  box-shadow: 0 4px 20px rgba(13, 148, 136, 0.12);
+}
+
+/* Job type badges */
+.job-type,
+.job-status {
+  background-color: var(--jobportal-color-accent-light);
+  color: var(--jobportal-color-accent);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Company cards */
+.company-item {
+  border: 1px solid var(--jobportal-color-border);
+  border-radius: 8px;
+}
+
+.company-item:hover {
+  border-color: var(--jobportal-color-accent);
+  box-shadow: 0 4px 20px rgba(13, 148, 136, 0.12);
+}
+
+/* Candidate cards */
+.candidate-item {
+  border: 1px solid var(--jobportal-color-border);
+  border-radius: 8px;
+}
+
+/* Dashboard sidebar */
+.dashboard-sidebar {
+  background-color: var(--jobportal-color-bg-dark);
+}
+
+.dashboard-sidebar a {
+  color: #94a3b8;
+}
+
+.dashboard-sidebar a:hover,
+.dashboard-sidebar li.active > a {
+  color: #ffffff;
+  background-color: var(--jobportal-color-accent);
+}
+
+/* Search form */
+.search-form-wrapper,
+.jobportal-search-horizontal,
+.jobportal-search-vertical {
+  background-color: var(--jobportal-color-bg-light);
+  border-radius: 12px;
+}
+
+/* Search button */
+.btn-search,
+.btn-search-vertical,
+.btn-search-horizontal {
+  background-color: var(--jobportal-color-accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+}
+
+.btn-search:hover,
+.btn-search-vertical:hover {
+  background-color: var(--jobportal-color-accent-hover);
+}
+
+/* Page title bar */
+.page-title {
+  background-color: var(--jobportal-color-bg-light);
+  border-bottom: 1px solid var(--jobportal-color-border);
+}
+
+/* Input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+select,
+textarea {
+  border-color: var(--jobportal-color-border);
+  border-radius: 6px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--jobportal-color-accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+}
+
+/* Tags / skills */
+.tag-item,
+.skill-tag {
+  background-color: var(--jobportal-color-indigo-light);
+  color: var(--jobportal-color-indigo);
+  border-radius: 4px;
+  padding: 2px 10px;
+  font-size: 12px;
+}
+
+/* Pagination */
+.pagination .page-numbers.current,
+.pagination .page-numbers:hover {
+  background-color: var(--jobportal-color-accent);
+  color: #ffffff;
+}
+
+/* Package / pricing cards */
+.package-item.featured,
+.package-featured {
+  border: 2px solid var(--jobportal-color-accent);
+}
+
+.package-item .package-price {
+  color: var(--jobportal-color-accent);
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--jobportal-color-bg-dark);
+  color: #94a3b8;
+}
+
+.site-footer a {
+  color: #cbd5e1;
+}
+
+.site-footer a:hover {
+  color: var(--jobportal-color-accent);
+}
+
+/* Breadcrumb */
+.breadcrumb-item a {
+  color: var(--jobportal-color-accent);
+}
+
+/* Notification / growl */
+.jquery-growl-notice {
+  background-color: var(--jobportal-color-accent);
+}
+
+.jquery-growl-error {
+  background-color: #ef4444;
+}
+
+/* Loading spinner */
+.jobportal-ldef-loading span {
+  background-color: var(--jobportal-color-accent);
+}
+
+/* Widget titles */
+.widget-title {
+  color: var(--jobportal-color-primary);
+  border-bottom: 2px solid var(--jobportal-color-accent);
+  padding-bottom: 8px;
+}
+
+/* Tab active */
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  color: var(--jobportal-color-accent);
+  border-bottom-color: var(--jobportal-color-accent);
+}
+
+/* Checkbox / radio custom */
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  accent-color: var(--jobportal-color-accent);
+}
+
+/* Progress bars */
+.progress-bar {
+  background-color: var(--jobportal-color-accent);
+}
+
+/* Icon accents */
+.icon-accent,
+.icon-primary {
+  color: var(--jobportal-color-accent);
+}
+
+/* Alert / notice boxes */
+.notice-success,
+.alert-success {
+  background-color: var(--jobportal-color-accent-light);
+  border-left: 4px solid var(--jobportal-color-accent);
+  color: #065f46;
+}

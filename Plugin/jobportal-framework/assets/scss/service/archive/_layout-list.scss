@@ -1,0 +1,102 @@
+.civi-service-item.layout-list {
+	.service-header{
+		@include d-flex();
+		@include justify-content-between();
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid $border-color;
+	}
+	.service-thumbnail img{
+		border-radius: 16px 0 0 16px;
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
+	}
+	.service-content{
+		padding: 24px;
+		width: 100%;
+	}
+	.service-bottom{
+		@include d-flex();
+		@include align-items-center();
+	}
+	.info-inner{
+		margin-left: 32px;
+	}
+	.service-status-inner{
+		@include d-flex();
+		@include align-items-center();
+		.service-status{
+			width: 22px;
+			margin-top: -8px;
+			margin-right: 15px;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.civi-service-item.layout-list {
+		@include d-flex();
+		.service-thumbnail{
+			@include flex(0 0 220px);
+
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.civi-service-item.layout-list {
+		.service-thumbnail{
+			img{
+				border-radius: 16px 16px 0 0;
+			}
+		}
+		.service-header-right {
+			display: block;
+		}
+		.service-title {
+			margin-top: 14px;
+		}
+		.service-status-inner{
+			position: absolute;
+			top: 24px;
+			right: 24px;
+			.service-status{
+				margin-top: 0;
+				width: auto;
+				margin-right: 12px;
+			}
+			.featured,.btn-add-to-wishlist{
+				width: 36px;
+				height: 36px;
+				background-color: #ffff;
+				border-radius: 50%;
+				text-align: center;
+				display: block;
+			}
+		}
+		.featured{
+			img{
+				position: relative;
+				top: 3px;
+			}
+		}
+		.btn-add-to-wishlist{
+			span{
+				position: relative;
+				top: 8px;
+			}
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.civi-service-item.layout-list {
+		.candidate-bottom {
+			display: block;
+		}
+		.candidate-salary {
+			margin-top: 15px;
+		}
+	}
+}

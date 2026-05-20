@@ -1,0 +1,48 @@
+.elementor-widget-jobportal-modern-menu .mb-menu {
+  display: none;
+  margin-right: 0;
+}
+.elementor-widget-jobportal-modern-menu .desktop-menu {
+  display: flex;
+}
+.elementor-widget-jobportal-modern-menu .elementor-nav-menu--layout-dropdown.desktop-menu {
+  display: none;
+}
+.elementor-widget-jobportal-modern-menu .elementor-nav-menu--layout-dropdown.mb-menu {
+  display: flex;
+}
+
+@media only screen and (max-width: 1024px) {
+  .jobportal-modern-menu-tablet .desktop-menu {
+    display: none;
+  }
+  .jobportal-modern-menu-tablet .mb-menu {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .jobportal-modern-menu-tablet_small .desktop-menu {
+    display: none;
+  }
+  .jobportal-modern-menu-tablet_small .mb-menu {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .jobportal-modern-menu-mobile .desktop-menu {
+    display: none;
+  }
+  .jobportal-modern-menu-mobile .mb-menu {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .jobportal-modern-menu-mobile_small .desktop-menu {
+    display: none;
+  }
+  .jobportal-modern-menu-mobile_small .mb-menu {
+    display: flex;
+  }
+}
+
+/*# sourceMappingURL=modern-menu.css.map */
