@@ -1,0 +1,29 @@
+// reCAPTCHA v3 Badge Styling
+// File: elements/_recaptcha.scss
+// Custom styling for reCAPTCHA v3 badge position and visibility
+
+// Hide reCAPTCHA badge when option is enabled
+.grecaptcha-badge {
+	&.civi-hidden {
+		visibility: hidden !important;
+		opacity: 0 !important;
+	}
+}
+
+
+// reCAPTCHA privacy notice styling
+.civi-recaptcha-notice {
+	font-size: 11px;
+	color: #666;
+	line-height: 1.4;
+	margin-top: 10px;
+
+	a {
+		color: #666;
+		text-decoration: underline;
+
+		&:hover {
+			color: #333;
+		}
+	}
+}
